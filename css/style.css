@@ -156,3 +156,23 @@ ul {
   left: 0;
   background-image: url(../images/play.svg);
 }
+
+.seasons__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 100px 75px;
+  counter-reset: counter;
+}
+
+.seasons__item {
+  width: 350px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.seasons__item::before {
+  content: "counter";
+  counter-increment: "0" counter("counter");
+}
