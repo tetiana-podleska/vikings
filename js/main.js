@@ -1,14 +1,4 @@
 $(function () {
-  $("[data-fancybox]").fancybox({
-    youtube: {
-      controls: 0,
-      showinfo: 0,
-    },
-    vimeo: {
-      color: "f00",
-    },
-  });
-
   $(".heroes__slider-img").slick({
     slidesToShow: 1,
     slidesToScroll: 1,

@@ -64,9 +64,8 @@ ul {
   transform: rotate(180deg);
 }
 
-.menu__list {
-  display: flex;
-  justify-content: center;
+.menu {
+  position: relative;
   padding: 50px 0 58px;
   background: linear-gradient(
     180deg,
@@ -74,6 +73,11 @@ ul {
     #111213 43.62%,
     rgba(32, 31, 33, 0) 86.33%
   );
+}
+
+.menu__list {
+  display: flex;
+  justify-content: center;
 }
 
 .menu__list-item {
@@ -92,7 +96,7 @@ ul {
 }
 
 .logo {
-  padding-top: 178px;
+  padding-top: 17vh;
 }
 
 .about__inner {
@@ -128,7 +132,7 @@ ul {
 }
 
 .video__text {
-  padding-top: 444px;
+  padding-top: 45vh;
   margin-bottom: 40px;
   font-size: 72px;
   font-weight: 300;
@@ -163,6 +167,7 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 100px 75px;
   counter-reset: number;
+  padding-top: 50px;
 }
 
 .seasons__item {
@@ -193,6 +198,10 @@ ul {
   font-weight: bold;
   line-height: 112px;
   color: #600e09;
+}
+
+.seasons__item:nth-child(n + 10)::before {
+  content: counter(number);
 }
 
 .seasons__item:hover::after {
@@ -275,6 +284,17 @@ ul {
   position: relative;
 }
 
+.menu__container {
+  max-width: 1385px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.page-logo {
+  position: absolute;
+  left: 0;
+}
+
 .season-info {
   position: absolute;
   bottom: 0;
@@ -306,3 +326,66 @@ ul {
 }
 
 /** end SEASON 1 **/
+
+/* start media  */
+
+@media (max-width: 1366px) {
+  .logo__img {
+    width: 50%;
+  }
+  .menu__list-link {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .about__info {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__inner {
+    display: block;
+  }
+  .section-page {
+    padding: 50px 0;
+  }
+  .title {
+    margin-bottom: 50px;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .video__text {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .video__text span {
+    padding-right: 200px;
+  }
+
+  .video__btn {
+    margin-right: 0;
+    padding-left: 62px;
+  }
+  .video__btn::before {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    top: -16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .menu__list {
+    display: none;
+  }
+  .logo {
+    padding-top: 21vh;
+  }
+}
+
+/* end media */
