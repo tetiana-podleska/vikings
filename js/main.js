@@ -1,4 +1,8 @@
 $(function () {
+  $(".menu__btn").on("click", function () {
+    $(".menu__list").toggleClass("menu__list--active");
+  });
+
   $(".heroes__slider-img").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -9,6 +13,14 @@ $(function () {
     nextArrow: `<button class="slick-btn slick-next">
   <img src="images/arrow-next.png" alt="next" />
 </button>`,
+    responsive: [
+      {
+        breakpoint: 769,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   });
   $(".heroes__slider-text").slick({
     slidesToShow: 1,
